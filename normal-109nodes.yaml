@@ -1,0 +1,993 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+unified-delay: true
+tcp-concurrent: true
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  nameserver-policy:
+    +.google.com: https://dns.cloudflare.com/dns-query
+    +.googleapis.com: https://dns.cloudflare.com/dns-query
+    +.googleapis.cn: https://dns.cloudflare.com/dns-query
+    +.googlevideo.com: https://dns.cloudflare.com/dns-query
+    +.gstatic.com: https://dns.cloudflare.com/dns-query
+    +.googleusercontent.com: https://dns.cloudflare.com/dns-query
+    +.ggpht.com: https://dns.cloudflare.com/dns-query
+    +.gvt1.com: https://dns.cloudflare.com/dns-query
+    +.gvt2.com: https://dns.cloudflare.com/dns-query
+    +.withgoogle.com: https://dns.cloudflare.com/dns-query
+    +.google-analytics.com: https://dns.cloudflare.com/dns-query
+    +.googletagservices.com: https://dns.cloudflare.com/dns-query
+    +.youtube.com: https://dns.cloudflare.com/dns-query
+    +.youtu.be: https://dns.cloudflare.com/dns-query
+    +.ytimg.com: https://dns.cloudflare.com/dns-query
+    +.gmail.com: https://dns.cloudflare.com/dns-query
+    +.facebook.com: https://dns.cloudflare.com/dns-query
+    +.twitter.com: https://dns.cloudflare.com/dns-query
+    +.x.com: https://dns.cloudflare.com/dns-query
+    +.github.com: https://dns.cloudflare.com/dns-query
+    +.githubusercontent.com: https://dns.cloudflare.com/dns-query
+    +.openai.com: https://dns.cloudflare.com/dns-query
+    +.chatgpt.com: https://dns.cloudflare.com/dns-query
+    +.anthropic.com: https://dns.cloudflare.com/dns-query
+  nameserver:
+  - https://doh.pub/dns-query
+  - https://dns.alidns.com/dns-query
+  - tls://dot.pub:853
+  - tls://dns.alidns.com:853
+  fallback:
+  - https://dns.cloudflare.com/dns-query
+  - https://dns.google/dns-query
+  - tls://1.1.1.1:853
+  - tls://8.8.8.8:853
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+    - 0.0.0.0/8
+    - 10.0.0.0/8
+    - 100.64.0.0/10
+    - 127.0.0.0/8
+    - 169.254.0.0/16
+    - 172.16.0.0/12
+    - 192.168.0.0/16
+    - 224.0.0.0/4
+    - 240.0.0.0/4
+    domain:
+    - +.google.com
+    - +.facebook.com
+    - +.youtube.com
+    - +.githubusercontent.com
+    - +.googlevideo.com
+    - +.googleapis.cn
+  fake-ip-filter:
+  - '*.lan'
+  - '*.local'
+  - '*.localhost'
+  - '*.test'
+  - localhost.ptlogin2.qq.com
+  - +.stun.*.*
+  - +.stun.*.*.*
+  - +.stun.*.*.*.*
+  - lens.l.google.com
+  - '*.srv.nintendo.net'
+  - +.stun.playstation.net
+  - xbox.*.*.microsoft.com
+  - '*.*.xboxlive.com'
+  - +.msftncsi.com
+  - +.msftconnecttest.com
+proxies:
+- name: 香港 01
+  type: anytls
+  server: byhk1106123.luoyun2.com
+  port: 443
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: byhk1106123.luoyun2.com
+- name: 香港 02
+  type: anytls
+  server: byhk1106123.luoyun2.com
+  port: 443
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: byhk1106123.luoyun2.com
+- name: 香港 03
+  type: anytls
+  server: hk11066.luoyun2.com
+  port: 443
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: hk11066.luoyun2.com
+- name: 香港 04
+  type: anytls
+  server: hk11066.luoyun2.com
+  port: 443
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: hk11066.luoyun2.com
+- name: 香港 05
+  type: anytls
+  server: byhk1015.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: byhk1015.luoyun2.com
+- name: 香港 06
+  type: anytls
+  server: hk1031yd.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: hk1031yd.luoyun2.com
+- name: 香港 07
+  server: hk1031yd.luoyun2.com
+  port: 22881
+  sni: hk1031yd.luoyun2.com
+  up: null
+  down: null
+  skip-cert-verify: false
+  type: hysteria2
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  obfs: salamander
+  obfs-password: w8uG5sRFPzP6Gb3B
+- name: 香港 08
+  type: anytls
+  server: hk1101.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: hk1101.luoyun2.com
+- name: 香港 09
+  type: anytls
+  server: hk1102.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: hk1102.luoyun2.com
+- name: 香港 10
+  type: anytls
+  server: hk1104.luoyun2.com
+  port: 443
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: hk1104.luoyun2.com
+- name: 香港 11
+  type: anytls
+  server: hk110612.luoyun2.com
+  port: 443
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: hk110612.luoyun2.com
+- name: 台湾 01
+  type: anytls
+  server: hr3ejw2bj1.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: hr3ejw2bj1.luoyun2.com
+- name: 台湾 02
+  type: anytls
+  server: ucj87n1105.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: ucj87n1105.luoyun2.com
+  skip-cert-verify: true
+- name: 台湾 03
+  type: anytls
+  server: 9g96ulhy68tttw4t94.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: 9g96ulhy68tttw4t94.luoyun2.com
+- name: 台湾 04
+  type: anytls
+  server: rab2ygv1nm.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: rab2ygv1nm.luoyun2.com
+- name: 台湾 05
+  type: anytls
+  server: x3yzykeeka-tw2.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: x3yzykeeka-tw2.luoyun2.com
+  skip-cert-verify: true
+- name: 台湾 06
+  type: anytls
+  server: 995ys2dcfwzzz.luoyun2.com
+  port: 11882
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: 995ys2dcfwzzz.luoyun2.com
+- name: 台湾 07
+  type: anytls
+  server: knee.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: knee.luoyun2.com
+- name: 日本 01
+  type: anytls
+  server: rrrrrr111111r.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: rrrrrr111111r.luoyun2.com
+- name: 日本 02
+  type: anytls
+  server: ryd1104.luoyun2.com
+  port: 443
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: ryd1104.luoyun2.com
+- name: 日本 03
+  type: anytls
+  server: rrrrrr77r.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: rrrrrr77r.luoyun2.com
+- name: 日本 04
+  type: anytls
+  server: rrrrrr999919.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: cdn-backup-pool-west.com
+  skip-cert-verify: true
+- name: 日本 05
+  type: anytls
+  server: rrrrrr111111r94.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: rrrrrr111111r94.luoyun2.com
+- name: 日本 06
+  type: anytls
+  server: rrrrrr131313.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: cdn-backup-pool-west.com
+  skip-cert-verify: true
+- name: 日本 07
+  type: anytls
+  server: r1106.luoyun2.com
+  port: 443
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: r1106.luoyun2.com
+- name: 日本 08
+  type: anytls
+  server: rrrrrr101010r.luoyun2.com
+  port: 12899
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: rr0520111.ly123.edu.kg
+- name: 日本 09
+  type: anytls
+  server: rrrrrr101010r.luoyun2.com
+  port: 12899
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: rr0520111.ly123.edu.kg
+- name: 韩国 01
+  type: anytls
+  server: x3yzykeeka-tw2.luoyun2.com
+  port: 11848
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: hggk99.luoyun2.com
+- name: 韩国 02
+  type: anytls
+  server: hk11058.luoyun2.com
+  port: 15842
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: hggk99.luoyun2.com
+- name: 新加坡 01
+  type: anytls
+  server: xxxxxx444919.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: xxxxxx444919.luoyun2.com
+- name: 新加坡 02
+  type: anytls
+  server: xxxxxx6662.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: xxxxxx6662.luoyun2.com
+- name: 新加坡 03
+  type: anytls
+  server: xxxxxx777918.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: xxxxxx777918.luoyun2.com
+- name: 新加坡 04
+  type: anytls
+  server: xxxxxx888918.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: xxxxxx888918.luoyun2.com
+- name: 新加坡 05
+  type: anytls
+  server: xxxxxx99991014.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: xxxxxx99991014.luoyun2.com
+- name: 新加坡 06
+  type: anytls
+  server: hr3ejw2bj1.luoyun2.com
+  port: 27625
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: xjp06201.tizi001.com
+- name: 新加坡 07
+  type: anytls
+  server: hk11058.luoyun2.com
+  port: 27625
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: xjp06201.tizi001.com
+- name: 新加坡 08
+  type: anytls
+  server: x1017yd.luoyun2.com
+  port: 443
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: x1017yd.luoyun2.com
+  skip-cert-verify: true
+- name: 美国 01
+  type: anytls
+  server: 1017mg.luoyun2.com
+  port: 443
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: 1017mg.luoyun2.com
+- name: 美国 02
+  type: anytls
+  server: cdn-edge-sgp-m825.luoyun2.com
+  port: 443
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: cdn-edge-sgp-m825.luoyun2.com
+- name: 美国 03
+  type: anytls
+  server: x3yzykeeka-tw2.luoyun2.com
+  port: 28760
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: cdn-edge-sgp-m825.luoyun2.com
+- name: 美国 04
+  type: anytls
+  server: rrrrrr101010r.luoyun2.com
+  port: 31540
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: cdn-edge-sgp-m825.luoyun2.com
+- name: 美国 05
+  type: anytls
+  server: 9g96ulhy68tttw4t94.luoyun2.com
+  port: 52369
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: ynysmg.ly123.edu.kg
+- name: 美国 06
+  type: anytls
+  server: rrrrrr111111r.luoyun2.com
+  port: 14415
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: ynysmg.ly123.edu.kg
+- name: 英国 01
+  type: anytls
+  server: 995ys2dcfwzzz.luoyun2.com
+  port: 53519
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: yg816.luoyun2.com
+  skip-cert-verify: true
+- name: 英国 02
+  type: anytls
+  server: rrrrrr101010r.luoyun2.com
+  port: 17515
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: yg816.luoyun2.com
+  skip-cert-verify: true
+- name: 爱尔兰 01
+  type: anytls
+  server: aierl813.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: aierl813.luoyun2.com
+- name: 爱尔兰 02
+  type: anytls
+  server: xxxxxx444919.luoyun2.com
+  port: 33506
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: aierl813.luoyun2.com
+- name: 爱尔兰 03
+  type: anytls
+  server: ucj87n1105.luoyun2.com
+  port: 44599
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: aierl813.luoyun2.com
+- name: 法国 01
+  type: anytls
+  server: faguo1024.luoyun2.com
+  port: 20031
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: faguo1024.luoyun2.com
+- name: 法国 02
+  type: anytls
+  server: ucj87n1105.luoyun2.com
+  port: 13821
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: faguo1024.luoyun2.com
+- name: 法国 03
+  type: anytls
+  server: ucj87n1105.luoyun2.com
+  port: 16734
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: faguo1024.luoyun2.com
+- name: 德国 01
+  type: anytls
+  server: 9g96ulhy68tttw4t94.luoyun2.com
+  port: 56464
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: de915.luoyun2.com
+- name: 德国 02
+  type: anytls
+  server: xxxxxx444919.luoyun2.com
+  port: 41450
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: de915.luoyun2.com
+- name: 荷兰 01
+  type: anytls
+  server: rrrrrr111111r.luoyun2.com
+  port: 64146
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: he8861.luoyun2.com
+- name: 荷兰 02
+  type: anytls
+  server: hk11058.luoyun2.com
+  port: 26641
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: he8861.luoyun2.com
+- name: 瑞士 01
+  type: anytls
+  server: xxxxxx444919.luoyun2.com
+  port: 61430
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: rs916.luoyun2.com
+- name: 瑞士 02
+  type: anytls
+  server: rrrrrr111111r.luoyun2.com
+  port: 18275
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: rs916.luoyun2.com
+- name: 丹麦 01
+  type: anytls
+  server: ucj87n1105.luoyun2.com
+  port: 27361
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: dm1024.luoyun2.com
+- name: 丹麦 02
+  type: anytls
+  server: ucj87n1105.luoyun2.com
+  port: 39775
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: dm1024.luoyun2.com
+- name: 挪威 01
+  type: anytls
+  server: nuowei829.luoyun2.com
+  port: 20191
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: nuowei829.luoyun2.com
+- name: 挪威 02
+  type: anytls
+  server: 995ys2dcfwzzz.luoyun2.com
+  port: 29863
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: nuowei829.luoyun2.com
+- name: 挪威 03
+  type: anytls
+  server: hk11058.luoyun2.com
+  port: 57463
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: nuowei829.luoyun2.com
+- name: 土耳其 01
+  type: anytls
+  server: tu0907.luoyun2.com
+  port: 443
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: tu0907.luoyun2.com
+- name: 土耳其 02
+  type: anytls
+  server: 9g96ulhy68tttw4t94.luoyun2.com
+  port: 12489
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: tu0907.luoyun2.com
+- name: 土耳其 03
+  type: anytls
+  server: byhk1106123.luoyun2.com
+  port: 12489
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: tu0907.luoyun2.com
+- name: 迪拜 01
+  type: anytls
+  server: hk11058.luoyun2.com
+  port: 16492
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: ajldb0907.luoyun2.com
+- name: 迪拜 02
+  type: anytls
+  server: xxxxxx6662.luoyun2.com
+  port: 38702
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: ajldb0907.luoyun2.com
+- name: 格陵兰 01
+  server: kll102.luoyun2.com
+  port: 22881
+  sni: kll102.luoyun2.com
+  up: null
+  down: null
+  skip-cert-verify: false
+  type: hysteria2
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  obfs: salamander
+  obfs-password: ZrXQjYN4WHnv4iHf
+- name: 格陵兰 02
+  type: anytls
+  server: x3yzykeeka-tw2.luoyun2.com
+  port: 11939
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: kll102.luoyun2.com
+- name: 格陵兰 03
+  type: anytls
+  server: xxxxxx777918.luoyun2.com
+  port: 41032
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: kll102.luoyun2.com
+- name: 澳大利亚 01
+  type: anytls
+  server: adly99.luoyun2.com
+  port: 443
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: adly99.luoyun2.com
+- name: 澳大利亚 02
+  type: anytls
+  server: 995ys2dcfwzzz.luoyun2.com
+  port: 37893
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: adly99.luoyun2.com
+- name: 新西兰 01
+  type: anytls
+  server: byhk1007.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: byhk1007.luoyun2.com
+- name: 新西兰 02
+  type: anytls
+  server: ucj87n1105.luoyun2.com
+  port: 48311
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: byhk1007.luoyun2.com
+- name: 新西兰 03
+  type: anytls
+  server: 995ys2dcfwzzz.luoyun2.com
+  port: 48311
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: byhk1007.luoyun2.com
+- name: 加拿大 01
+  type: anytls
+  server: hk11058.luoyun2.com
+  port: 53160
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: jnd831.luoyun2.com
+- name: 加拿大 02
+  type: anytls
+  server: rrrrrr999919.luoyun2.com
+  port: 64397
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: jnd831.luoyun2.com
+- name: 巴西 01
+  type: anytls
+  server: hr3ejw2bj1.luoyun2.com
+  port: 54708
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: baxi95654.luoyun2.com
+- name: 巴西 02
+  type: anytls
+  server: rrrrrr15rr5.luoyun2.com
+  port: 42403
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: baxi95654.luoyun2.com
+- name: 墨西哥 01
+  type: anytls
+  server: mxg1024.luoyun2.com
+  port: 20101
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: mxg1024.luoyun2.com
+- name: 墨西哥 02
+  type: anytls
+  server: ucj87n1105.luoyun2.com
+  port: 10651
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: mxg1024.luoyun2.com
+- name: 墨西哥 03
+  type: anytls
+  server: ucj87n1105.luoyun2.com
+  port: 10651
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: mxg1024.luoyun2.com
+- name: 智利 01
+  type: anytls
+  server: rrrrrr101010r.luoyun2.com
+  port: 43675
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: zhili666.luoyun2.com
+- name: 智利 02
+  type: anytls
+  server: hk11058.luoyun2.com
+  port: 37380
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: zhili666.luoyun2.com
+- name: 印度 01
+  type: anytls
+  server: 9g96ulhy68tttw4t94.luoyun2.com
+  port: 14999
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: yd5156.luoyun2.com
+- name: 印度 02
+  type: anytls
+  server: ucj87n1105.luoyun2.com
+  port: 41607
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: yd5156.luoyun2.com
+- name: 印度尼西亚 01
+  type: anytls
+  server: xxxxxx444919.luoyun2.com
+  port: 34377
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: ydnxy0912.luoyun2.com
+- name: 印度尼西亚 02
+  type: anytls
+  server: x3yzykeeka-tw2.luoyun2.com
+  port: 23471
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: ydnxy0912.luoyun2.com
+- name: 马来西亚 01
+  type: anytls
+  server: xxxxxx444919.luoyun2.com
+  port: 34138
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: malaixy94.luoyun2.com
+- name: 马来西亚 02
+  type: anytls
+  server: hk11058.luoyun2.com
+  port: 19953
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: malaixy94.luoyun2.com
+- name: 越南 01
+  type: anytls
+  server: xxxxxx444919.luoyun2.com
+  port: 64915
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: yn910.luoyun2.com
+- name: 越南 02
+  type: anytls
+  server: x3yzykeeka-tw2.luoyun2.com
+  port: 19816
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: yn910.luoyun2.com
+- name: 泰国 01
+  type: anytls
+  server: x3yzykeeka-tw2.luoyun2.com
+  port: 28700
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: cdn-edge-jp-tg828.luoyun2.com
+- name: 泰国 02
+  type: anytls
+  server: xxxxxx6662.luoyun2.com
+  port: 23435
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: cdn-edge-jp-tg828.luoyun2.com
+- name: 缅甸 01
+  type: anytls
+  server: xxxxxx444919.luoyun2.com
+  port: 24314
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: mdassaz.ly123.edu.kg
+  skip-cert-verify: true
+- name: 缅甸 02
+  type: anytls
+  server: hr3ejw2bj1.luoyun2.com
+  port: 15869
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: mdassaz.ly123.edu.kg
+  skip-cert-verify: true
+- name: 柬埔寨 01
+  type: anytls
+  server: jps1025.luoyun2.com
+  port: 11881
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: jps1025.luoyun2.com
+- name: 柬埔寨 02
+  type: anytls
+  server: ucj87n1105.luoyun2.com
+  port: 64065
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: jps1025.luoyun2.com
+- name: 菲律宾 01
+  type: anytls
+  server: xxxxxx444919.luoyun2.com
+  port: 35514
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: flb5667.luoyun2.com
+- name: 菲律宾 02
+  type: anytls
+  server: hr3ejw2bj1.luoyun2.com
+  port: 21233
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: flb5667.luoyun2.com
+- name: 文莱 01
+  type: anytls
+  server: 9g96ulhy68tttw4t94.luoyun2.com
+  port: 32033
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: wenlai000202.ly123.edu.kg
+- name: 文莱 02
+  type: anytls
+  server: xxxxxx444919.luoyun2.com
+  port: 52455
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: wenlai000202.ly123.edu.kg
+- name: 东帝汶 01
+  type: anytls
+  server: x3yzykeeka-tw2.luoyun2.com
+  port: 36205
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: ddw881.luoyun2.com
+- name: 东帝汶 02
+  type: anytls
+  server: xxxxxx6662.luoyun2.com
+  port: 20664
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: ddw881.luoyun2.com
+- name: 尼日利亚 01
+  type: anytls
+  server: xxxxxx444919.luoyun2.com
+  port: 56385
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: nrly916.luoyun2.com
+- name: 澳门 01
+  type: anytls
+  server: x3yzykeeka-tw2.luoyun2.com
+  port: 23892
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: aom811.ly123.edu.kg
+- name: 澳门 02
+  type: anytls
+  server: xxxxxx444919.luoyun2.com
+  port: 17744
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: aom811.ly123.edu.kg
+- name: 南极 01
+  type: anytls
+  server: 9g96ulhy68tttw4t94.luoyun2.com
+  port: 49414
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: nanji666.ly123.edu.kg
+- name: 南极 02
+  type: anytls
+  server: ucj87n1105.luoyun2.com
+  port: 49414
+  password: 052933f5-18d3-4590-84e0-cb0d2a48d529
+  udp: true
+  sni: nanji666.ly123.edu.kg
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - 香港 01
+  - 香港 02
+  - 香港 03
+  - 香港 04
+  - 香港 05
+  - 香港 06
+  - 香港 07
+  - 香港 08
+  - 香港 09
+  - 香港 10
+  - 香港 11
+  - 台湾 01
+  - 台湾 02
+  - 台湾 03
+  - 台湾 04
+  - 台湾 05
+  - 台湾 06
+  - 台湾 07
+  - 日本 01
+  - 日本 02
+  - 日本 03
+  - 日本 04
+  - 日本 05
+  - 日本 06
+  - 日本 07
+  - 日本 08
+  - 日本 09
+  - 韩国 01
+  - 韩国 02
+  - 新加坡 01
+  - 新加坡 02
+  - 新加坡 03
+  - 新加坡 04
+  - 新加坡 05
+  - 新加坡 06
+  - 新加坡 07
+  - 新加坡 08
+  - 美国 01
+  - 美国 02
+  - 美国 03
+  - 美国 04
+  - 美国 05
+  - 美国 06
+  - 英国 01
+  - 英国 02
+  - 爱尔兰 01
+  - 爱尔兰 02
+  - 爱尔兰 03
+  - 法国 01
+  - 法国 02
+  - 法国 03
+  - 德国 01
+  - 德国 02
+  - 荷兰 01
+  - 荷兰 02
+  - 瑞士 01
+  - 瑞士 02
+  - 丹麦 01
+  - 丹麦 02
+  - 挪威 01
+  - 挪威 02
+  - 挪威 03
+  - 土耳其 01
+  - 土耳其 02
+  - 土耳其 03
+  - 迪拜 01
+  - 迪拜 02
+  - 格陵兰 01
+  - 格陵兰 02
+  - 格陵兰 03
+  - 澳大利亚 01
+  - 澳大利亚 02
+  - 新西兰 01
+  - 新西兰 02
+  - 新西兰 03
+  - 加拿大 01
+  - 加拿大 02
+  - 巴西 01
+  - 巴西 02
+  - 墨西哥 01
+  - 墨西哥 02
+  - 墨西哥 03
+  - 智利 01
+  - 智利 02
+  - 印度 01
+  - 印度 02
+  - 印度尼西亚 01
+  - 印度尼西亚 02
+  - 马来西亚 01
+  - 马来西亚 02
+  - 越南 01
+  - 越南 02
+  - 泰国 01
+  - 泰国 02
+  - 缅甸 01
+  - 缅甸 02
+  - 柬埔寨 01
+  - 柬埔寨 02
+  - 菲律宾 01
+  - 菲律宾 02
+  - 文莱 01
+  - 文莱 02
+  - 东帝汶 01
+  - 东帝汶 02
+  - 尼日利亚 01
+  - 澳门 01
+  - 澳门 02
+  - 南极 01
+  - 南极 02
+  - DIRECT
+rules:
+- DOMAIN-SUFFIX,local,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- GEOIP,CN,DIRECT
+- MATCH,🚀 节点选择
