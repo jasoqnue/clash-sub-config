@@ -1,0 +1,327 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: false
+proxies:
+- name: 香港01
+  type: vless
+  server: cf.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-hk1.777036.xyz
+  client-fingerprint: safari
+  ws-opts:
+    path: /yfjc/hk
+    headers:
+      Host: yfjc-hk1.777036.xyz
+- name: 香港02
+  type: vless
+  server: cf.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-hk1.777036.xyz
+  client-fingerprint: ios
+  ws-opts:
+    path: /yfjc/hk
+    headers:
+      Host: yfjc-hk1.777036.xyz
+- name: 日本01
+  type: vless
+  server: cf.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-jp1.777036.xyz
+  client-fingerprint: ios
+  ws-opts:
+    path: /yfjc/jp
+    headers:
+      Host: yfjc-jp1.777036.xyz
+- name: 日本02
+  type: vless
+  server: cf.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-jp1.777036.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /yfjc/jp
+    headers:
+      Host: yfjc-jp1.777036.xyz
+- name: 日本03
+  type: vless
+  server: cf.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-jp1.777036.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /yfjc/jp
+    headers:
+      Host: yfjc-jp1.777036.xyz
+- name: 日本04
+  type: vless
+  server: cf.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-jp2.777036.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /yfjc/jp
+    headers:
+      Host: yfjc-jp2.777036.xyz
+- name: 日本05
+  type: vless
+  server: cf.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-jp2.777036.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /yfjc/jp
+    headers:
+      Host: yfjc-jp2.777036.xyz
+- name: 日本06
+  type: vless
+  server: cf.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-jp2.777036.xyz
+  client-fingerprint: safari
+  ws-opts:
+    path: /yfjc/jp
+    headers:
+      Host: yfjc-jp2.777036.xyz
+- name: 美国01
+  type: vless
+  server: 142.202.242.179
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  servername: tv.apple.com
+  client-fingerprint: ios
+  reality-opts:
+    public-key: gkl6bqL44xulia53I8gd_BtiVRzU1rsIu4WeffywLBY
+    short-id: 78f5a5a5
+- name: 美国02
+  type: vless
+  server: 142.202.242.195
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  servername: tv.apple.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: cu2H4WP9LU3ZdD85MNr8w4jUS79Wx6YVUxVeRGVBQyc
+    short-id: be05a235
+- name: 美国03
+  type: vless
+  server: 142.202.242.171
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  servername: tv.apple.com
+  client-fingerprint: ios
+  reality-opts:
+    public-key: BU86Bh8IfiMcQllCNU2sFi4z1GfpPOaTxCepPpNmgC4
+    short-id: 710e95ee
+- name: 美国04
+  type: vless
+  server: 142.202.242.187
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  servername: osxapps.itunes.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: QaA2vbwC7_p-CRamAVypNdaQPIRWDNci4FWVqqkeIk8
+    short-id: 78b573e8
+- name: 美国05
+  type: vless
+  server: 142.202.242.203
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: tcp
+  tls: true
+  udp: true
+  flow: xtls-rprx-vision
+  servername: osxapps.itunes.apple.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: 7PgL9ePC6U0xiWzXxt3Rm8c819IkJmkaRwzquuBsVX4
+    short-id: 3da1d566
+- name: 美国06
+  type: vless
+  server: cf3.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-us1.777026.xyz
+  client-fingerprint: safari
+  ws-opts:
+    path: /yfjc/us1
+    headers:
+      Host: yfjc-us1.777026.xyz
+- name: 美国07
+  type: vless
+  server: cf3.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-us2.777026.xyz
+  client-fingerprint: safari
+  ws-opts:
+    path: /yfjc/us2
+    headers:
+      Host: yfjc-us2.777026.xyz
+- name: 美国08
+  type: vless
+  server: cf3.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-us3.777026.xyz
+  client-fingerprint: ios
+  ws-opts:
+    path: /yfjc/us3
+    headers:
+      Host: yfjc-us3.777026.xyz
+- name: 美国09
+  type: vless
+  server: cf3.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-us4.777026.xyz
+  client-fingerprint: ios
+  ws-opts:
+    path: /yfjc/us4
+    headers:
+      Host: yfjc-us4.777026.xyz
+- name: 美国10
+  type: vless
+  server: cf3.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-us5.777026.xyz
+  client-fingerprint: safari
+  ws-opts:
+    path: /yfjc/us5
+    headers:
+      Host: yfjc-us5.777026.xyz
+- name: 美国11
+  type: vless
+  server: cf3.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-us1.777036.xyz
+  client-fingerprint: safari
+  ws-opts:
+    path: /yfjc/aius1
+    headers:
+      Host: yfjc-us1.777036.xyz
+- name: 美国12
+  type: vless
+  server: cf3.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-us001.777036.xyz
+  client-fingerprint: safari
+  ws-opts:
+    path: /yfjc/us1
+    headers:
+      Host: yfjc-us001.777036.xyz
+- name: 美国13
+  type: vless
+  server: cf3.yfjc.sbs
+  port: 443
+  uuid: 63972dda-cc45-4135-9303-ac2b8ffc36ab
+  network: ws
+  tls: true
+  udp: true
+  servername: yfjc-us001.777036.xyz
+  client-fingerprint: ios
+  ws-opts:
+    path: /yfjc/us1
+    headers:
+      Host: yfjc-us001.777036.xyz
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - 香港01
+  - 香港02
+  - 日本01
+  - 日本02
+  - 日本03
+  - 日本04
+  - 日本05
+  - 日本06
+  - 美国01
+  - 美国02
+  - 美国03
+  - 美国04
+  - 美国05
+  - 美国06
+  - 美国07
+  - 美国08
+  - 美国09
+  - 美国10
+  - 美国11
+  - 美国12
+  - 美国13
+rules:
+- MATCH,🚀 节点选择
