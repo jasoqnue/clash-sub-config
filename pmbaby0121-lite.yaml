@@ -1,0 +1,565 @@
+# 售后VX：pmbaby0121 轻量版：56 节点全保留，11 组/3615 规则 -> 1 组/9 条基础规则
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: error
+dns:
+  enable: true
+  ipv6: false
+  cache-algorithm: arc
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  respect-rules: true
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  - 114.114.114.114
+  proxy-server-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  nameserver:
+  - 223.5.5.5
+  - https://doh.pub/dns-query
+  - https://dns.alidns.com/dns-query
+  nameserver-policy:
+    geosite:cn,private:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+    geosite:google,youtube,telegram,gfw,geolocation-!cn:
+    - https://dns.google/dns-query
+    - https://1.1.1.1/dns-query
+  fallback:
+  - https://dns.google/dns-query
+  - https://1.1.1.1/dns-query
+  - tls://8.8.4.4
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+    - 240.0.0.0/4
+    domain:
+    - +.google.com
+    - +.facebook.com
+    - +.youtube.com
+    - +.129890981988.top
+proxies:
+- name: 香港 专线 01
+  type: ss
+  server: synctech.129890981988.top
+  port: 50001
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 香港 专线 02
+  type: ss
+  server: synctech.129890981988.top
+  port: 50002
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 香港 专线 03
+  type: ss
+  server: synctech.129890981988.top
+  port: 50003
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 香港 专线 04
+  type: ss
+  server: synctech.129890981988.top
+  port: 50004
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 香港 专线 05
+  type: ss
+  server: synctech.129890981988.top
+  port: 50005
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 香港 专线 06
+  type: ss
+  server: synctech.129890981988.top
+  port: 50006
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 香港 专线 07
+  type: vless
+  server: 05161358c400a2573393f59bb8a34def.2745918063.top
+  port: 443
+  uuid: aaf864cb-e822-4345-8d21-e13409733cb7
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: www.thermofisher.com
+  reality-opts:
+    public-key: NkdR-D11X0PAwRCMuG3uY1Mb_Yy0HdUqCUbl1lglfAM
+    short-id: 4a8c6254
+- name: 台湾 专线 01
+  type: ss
+  server: synctech.129890981988.top
+  port: 50007
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 台湾 专线 02
+  type: ss
+  server: synctech.129890981988.top
+  port: 50008
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 台湾 专线 03
+  type: ss
+  server: synctech.129890981988.top
+  port: 50009
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 台湾 专线 04
+  type: vless
+  server: b6d31f8a209c-4175-43e9-a2c8-9f601d73be54.2745918063.top
+  port: 443
+  uuid: aaf864cb-e822-4345-8d21-e13409733cb7
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: edge
+  servername: www.blender.org
+  reality-opts:
+    public-key: rBFyJq1DxoyB3fpe3CKhmqxbtd6ZxXL10MwAk1_AmDk
+    short-id: afefc2e3
+- name: 台湾 专线 05
+  type: vless
+  server: 1a9c74e3d6bf-5932-4f81-b7a4-e260c9153d78.2745918063.top
+  port: 443
+  uuid: aaf864cb-e822-4345-8d21-e13409733cb7
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: www.mathworks.com
+  reality-opts:
+    public-key: nwIN51bOA4AxWAMNL0ln-xPKCYsBvplU9ZbD4ZD2_0o
+    short-id: 3206d6d3
+- name: 台湾 专线 06
+  type: vless
+  server: e8b25d73c1af-7649-42c6-a951-3d807f2be416.2745918063.top
+  port: 443
+  uuid: aaf864cb-e822-4345-8d21-e13409733cb7
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: www.mathworks.com
+  reality-opts:
+    public-key: tzmvdayxsCXrzzr_yntVjsu1Y-TSde5nhqYttV4EPEY
+    short-id: 854fdedb
+- name: 日本 专线 01
+  type: ss
+  server: synctech.129890981988.top
+  port: 50010
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 日本 专线 02
+  type: ss
+  server: synctech.129890981988.top
+  port: 50011
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 日本 专线 03
+  type: ss
+  server: synctech.129890981988.top
+  port: 50012
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 韩国 专线 01
+  type: ss
+  server: synctech.129890981988.top
+  port: 50013
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 韩国 专线 02
+  type: ss
+  server: synctech.129890981988.top
+  port: 50014
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 韩国 专线 03
+  type: vless
+  server: 3e7a1c94f2bd-8256-49a3-b6d1-c704e2985f31.5167482930.top
+  port: 443
+  uuid: aaf864cb-e822-4345-8d21-e13409733cb7
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: www.nature.com
+  reality-opts:
+    public-key: tbBHxzPLSkpQb5tKiXNk3oJxTnfsUPtuw_ZDwqpIdGE
+    short-id: fa50b652
+- name: 新加坡 专线 01
+  type: ss
+  server: synctech.129890981988.top
+  port: 50016
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 新加坡 专线 02
+  type: ss
+  server: synctech.129890981988.top
+  port: 50017
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 新加坡 专线 03
+  type: ss
+  server: synctech.129890981988.top
+  port: 50018
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 美国 专线 01
+  type: ss
+  server: synctech.129890981988.top
+  port: 50019
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 美国 专线 02
+  type: ss
+  server: synctech.129890981988.top
+  port: 50020
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 美国 专线 03
+  type: ss
+  server: synctech.129890981988.top
+  port: 50021
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 美国 专线 04
+  type: ss
+  server: synctech.129890981988.top
+  port: 50022
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 美国 专线 05
+  type: ss
+  server: synctech.129890981988.top
+  port: 50023
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 美国 专线 06
+  type: ss
+  server: synctech.129890981988.top
+  port: 50024
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 美国 专线 07
+  type: vless
+  server: a53d9e71c4b2-6371-48a5-b0e6-2f914d73c8ab.8391204756.top
+  port: 443
+  uuid: aaf864cb-e822-4345-8d21-e13409733cb7
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: edge
+  servername: www.chase.com
+  reality-opts:
+    public-key: nZ1v8IMMOuSb6EMvDkmSMnnvZzAQFfAGYjKFkAqYoUc
+    short-id: 7c1170e9
+- name: 美国 专线 08
+  type: vless
+  server: 6b1f83d4a29e-7514-4c97-b2a8-e3056d91f47c.8391204756.top
+  port: 8443
+  uuid: aaf864cb-e822-4345-8d21-e13409733cb7
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: www.chase.com
+  reality-opts:
+    public-key: PUG60xaGvjhTKk26_37Y0xNSwErvFbft43hVVVcvjkw
+    short-id: 7c9d0a51
+- name: 美国 专线 09
+  type: vless
+  server: 4e7b25d9c183-8921-46a4-b7c0-f31d6058ae72.8391204756.top
+  port: 8080
+  uuid: aaf864cb-e822-4345-8d21-e13409733cb7
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  servername: www.mayoclinic.org
+  reality-opts:
+    public-key: -UDJmQSyRpYqe4KWn4gE-pEGlAAeDP0cfPkQr653Dlw
+    short-id: 83454ccf
+- name: 澳门 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50025
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 越南 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50049
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 马来西亚 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50026
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 英国 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50027
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 法国 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50028
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 德国 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50029
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 巴西 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50030
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 瑞典 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50031
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 西班牙 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50032
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 挪威 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50033
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 土耳其 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50034
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 澳大利亚 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50035
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 乌克兰 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50036
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 南极 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50037
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 泰国 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50038
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 菲律宾 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50039
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 朝鲜 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50040
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 约翰内斯堡 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50041
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 印度 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50042
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 巴基斯坦 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50043
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 尼日利亚 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50044
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 荷兰 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50045
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 意大利 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50046
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 加拿大 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50047
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+- name: 迪拜 专线
+  type: ss
+  server: synctech.129890981988.top
+  port: 50048
+  cipher: 2022-blake3-aes-128-gcm
+  password: YTIxN2Y2YjU0YTQ2NWM2OQ==:YWFmODY0Y2ItZTgyMi00Mw==
+  udp: true
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - 香港 专线 01
+  - 香港 专线 02
+  - 香港 专线 03
+  - 香港 专线 04
+  - 香港 专线 05
+  - 香港 专线 06
+  - 香港 专线 07
+  - 台湾 专线 01
+  - 台湾 专线 02
+  - 台湾 专线 03
+  - 台湾 专线 04
+  - 台湾 专线 05
+  - 台湾 专线 06
+  - 日本 专线 01
+  - 日本 专线 02
+  - 日本 专线 03
+  - 韩国 专线 01
+  - 韩国 专线 02
+  - 韩国 专线 03
+  - 新加坡 专线 01
+  - 新加坡 专线 02
+  - 新加坡 专线 03
+  - 美国 专线 01
+  - 美国 专线 02
+  - 美国 专线 03
+  - 美国 专线 04
+  - 美国 专线 05
+  - 美国 专线 06
+  - 美国 专线 07
+  - 美国 专线 08
+  - 美国 专线 09
+  - 澳门 专线
+  - 越南 专线
+  - 马来西亚 专线
+  - 英国 专线
+  - 法国 专线
+  - 德国 专线
+  - 巴西 专线
+  - 瑞典 专线
+  - 西班牙 专线
+  - 挪威 专线
+  - 土耳其 专线
+  - 澳大利亚 专线
+  - 乌克兰 专线
+  - 南极 专线
+  - 泰国 专线
+  - 菲律宾 专线
+  - 朝鲜 专线
+  - 约翰内斯堡 专线
+  - 印度 专线
+  - 巴基斯坦 专线
+  - 尼日利亚 专线
+  - 荷兰 专线
+  - 意大利 专线
+  - 加拿大 专线
+  - 迪拜 专线
+  - DIRECT
+rules:
+- DOMAIN-SUFFIX,local,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- GEOIP,CN,DIRECT
+- MATCH,🚀 节点选择
