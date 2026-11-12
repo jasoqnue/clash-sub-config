@@ -1,0 +1,436 @@
+# 售后VX：hkcode888 轻量版：46 节点全保留，去掉 external-controller/hosts/port/socks-port
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: error
+unified-delay: true
+proxies:
+- name: 香港 01
+  server: 2.s.f.m.m.v.5.9.6.hk01-ae5.entry.v51124-3a.qpon
+  port: 19273
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 香港 02
+  server: 9.5.u.k.9.e.w.9.6.hk02-ae5.entry.v51124-3a.qpon
+  port: 14561
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 香港 03
+  server: 9.s.u.m.m.e.5.9.6.hk03-ae5.entry.v51124-3a.qpon
+  port: 761
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 香港 04
+  server: 2.5.3.e.y.e.l.9.6.hk04-ae5.entry.v51124-3a.qpon
+  port: 805
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 香港 05
+  server: 9.6.u.e.u.v.l.9.6.hk05-ae5.entry.v51124-3a.qpon
+  port: 1813
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 香港 06
+  server: 9.5.i.e.m.e.5.9.6.hk06-ae5.entry.v51124-3a.qpon
+  port: 1414
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 香港 07
+  server: 9.s.i.m.u.v.w.9.6.hk07-ae5.entry.v51124-3a.qpon
+  port: 1421
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 香港 08
+  server: l.s.3.e.y.e.5.9.6.hk08-ae5.entry.v51124-3a.qpon
+  port: 18644
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 香港 09
+  server: 2.6.f.m.m.b.w.9.6.hk09-vm5.entry.v51124-3a.qpon
+  port: 15266
+  type: vmess
+  uuid: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  alterId: 1
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 香港 10
+  server: l.6.f.x.9.b.x.9.6.hk10-vm5.entry.v51124-3a.qpon
+  port: 13484
+  type: vmess
+  uuid: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  alterId: 1
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: speedtest-bgp-01-10.entry-0.chinasnow.net
+  udp: true
+- name: 香港 11
+  server: 2.6.u.e.u.v.l.9.6.hk11-vm5.entry.v51124-3a.qpon
+  port: 576
+  type: vmess
+  uuid: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  alterId: 1
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /tutorial/iphone13.m3u8
+    headers:
+      Host: speedtest-bgp-01-11.entry-0.chinasnow.net
+  udp: true
+- name: 台湾 01
+  server: 9.6.i.e.u.e.w.9.6.tw01-ae5.entry.v51124-3a.qpon
+  port: 20006
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 日本 01
+  server: l.s.i.e.9.b.l.9.6.jp01-ae5.entry.v51124-3a.qpon
+  port: 474
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 日本 02
+  server: l.p.u.k.y.j.5.9.6.jp02-ae5.entry.v51124-3a.qpon
+  port: 484
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 日本 03
+  server: 9.p.f.x.u.v.x.9.6.jp03-ae5.entry.v51124-3a.qpon
+  port: 489
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 日本 04
+  server: 9.6.f.k.m.v.x.9.6.jp04-ae5.entry.v51124-3a.qpon
+  port: 494
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 日本 05
+  server: 963k9j5.g03.jp05-vm5.entry.rtysjur.quest
+  port: 64656
+  type: vmess
+  uuid: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  alterId: 1
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 日本 06
+  server: 2pfkyvx.g03.jp06-vm5.entry.rtysjur.quest
+  port: 664
+  type: vmess
+  uuid: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  alterId: 1
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 日本 07
+  server: l.6.f.e.m.b.w.9.6.jp07-ae5.entry.v51124-3a.qpon
+  port: 14006
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 日本 08
+  server: l.s.i.m.9.v.x.9.6.jp08-ae5.entry.v51124-3a.qpon
+  port: 12544
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 日本 09
+  server: 2.p.f.x.9.b.x.9.6.jp09-ae5.entry.v51124-3a.qpon
+  port: 11159
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 日本 10
+  server: l.s.i.x.y.v.x.9.6.jp10-ae5.entry.v51124-3a.qpon
+  port: 16525
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 日本 11
+  server: 9.5.u.k.m.j.x.9.6.jp11-ae5.entry.v51124-3a.qpon
+  port: 17742
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 日本 12
+  server: 2p3emew-g03.jp01-nn-vm0.entry.fr0528.art
+  port: 21583
+  type: vmess
+  uuid: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  alterId: 1
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  udp: true
+- name: 日本 13
+  server: 9sfxmvl-g03.jp02-e3-vm0.entry.fr0528.art
+  port: 11775
+  type: vmess
+  uuid: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  alterId: 1
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 日本 14
+  server: 2suemjw-g03.jp03-j7-vm0.entry.fr0528.art
+  port: 21583
+  type: vmess
+  uuid: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  alterId: 1
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  udp: true
+- name: 日本 15
+  server: 26ikmjx-g03.jp04-1d-vm0.entry.fr0528.art
+  port: 446
+  type: vmess
+  uuid: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  alterId: 1
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 日本 16
+  server: 2pfxybl-g03.jp05-h6-vm0.entry.fr0528.art
+  port: 46484
+  type: vmess
+  uuid: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  alterId: 1
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 日本 17
+  server: 2simybw-g03.jp06-jz-vm0.entry.fr0528.art
+  port: 28785
+  type: vmess
+  uuid: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  alterId: 1
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  udp: true
+- name: 日本 18
+  server: l63xmbw-g03.jp07-sh-vm0.entry.fr0528.art
+  port: 28785
+  type: vmess
+  uuid: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  alterId: 1
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 韩国 01
+  server: l.6.u.x.u.v.w.9.6.kr01-ae5.entry.v51124-3a.qpon
+  port: 20041
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 新加坡 01
+  server: 2.6.u.m.y.v.5.9.6.sg01-ae5.entry.v51124-3a.qpon
+  port: 20001
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 新加坡 02
+  server: 9.p.f.k.y.j.x.9.6.sg02-ae5.entry.v51124-3a.qpon
+  port: 20076
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 新加坡 03
+  server: 9.p.3.e.y.j.5.9.6.sg03-ae5.entry.v51124-3a.qpon
+  port: 20081
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 美国 01
+  server: 2.5.3.k.9.b.5.9.6.us01-ae5.entry.v51124-3a.qpon
+  port: 20011
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 美国 02
+  server: 2.p.u.e.m.j.l.9.6.us02-ae5.entry.v51124-3a.qpon
+  port: 20016
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 英国 01
+  server: 2.6.u.e.m.v.x.9.6.gb01-ae5.entry.v51124-3a.qpon
+  port: 20021
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 法国 01
+  server: 9.p.i.k.u.v.5.9.6.fr01-ae5.entry.v51124-3a.qpon
+  port: 20066
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 德国 01
+  server: 2.p.i.k.m.v.x.9.6.de01-ae5.entry.v51124-3a.qpon
+  port: 20051
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 加拿大 01
+  server: 2.s.3.e.y.b.x.9.6.ca01-ae5.entry.v51124-3a.qpon
+  port: 20056
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 澳大利亚 01
+  server: l.5.u.x.y.j.x.9.6.au01-ae5.entry.v51124-3a.qpon
+  port: 20061
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 阿根廷 01
+  server: l.5.f.x.9.j.x.9.6.ar01-ae5.entry.v51124-3a.qpon
+  port: 20026
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 俄罗斯 01
+  server: 9.5.3.k.m.j.w.9.6.ru01-ae5.entry.v51124-3a.qpon
+  port: 20031
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 土耳其 01
+  server: 2.s.3.x.9.b.x.9.6.tr01-ae5.entry.v51124-3a.qpon
+  port: 20036
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 印度 01
+  server: 2.p.f.x.u.v.l.9.6.in01-ae5.entry.v51124-3a.qpon
+  port: 20046
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+- name: 乌克兰 01
+  server: 9.5.u.x.9.v.x.9.6.ua01-ae5.entry.v51124-3a.qpon
+  port: 20071
+  type: ss
+  cipher: aes-256-gcm
+  password: e5846fb0-b0e7-3a2e-9944-526cdb7fb4b3
+  udp: true
+proxy-groups:
+- name: 🔰 选择节点
+  type: select
+  proxies:
+  - 香港 01
+  - 香港 02
+  - 香港 03
+  - 香港 04
+  - 香港 05
+  - 香港 06
+  - 香港 07
+  - 香港 08
+  - 香港 09
+  - 香港 10
+  - 香港 11
+  - 台湾 01
+  - 日本 01
+  - 日本 02
+  - 日本 03
+  - 日本 04
+  - 日本 05
+  - 日本 06
+  - 日本 07
+  - 日本 08
+  - 日本 09
+  - 日本 10
+  - 日本 11
+  - 日本 12
+  - 日本 13
+  - 日本 14
+  - 日本 15
+  - 日本 16
+  - 日本 17
+  - 日本 18
+  - 韩国 01
+  - 新加坡 01
+  - 新加坡 02
+  - 新加坡 03
+  - 美国 01
+  - 美国 02
+  - 英国 01
+  - 法国 01
+  - 德国 01
+  - 加拿大 01
+  - 澳大利亚 01
+  - 阿根廷 01
+  - 俄罗斯 01
+  - 土耳其 01
+  - 印度 01
+  - 乌克兰 01
+  - DIRECT
+rules:
+- DOMAIN-SUFFIX,local,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- GEOIP,CN,DIRECT
+- MATCH,🔰 选择节点
