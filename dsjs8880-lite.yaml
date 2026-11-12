@@ -1,0 +1,675 @@
+# 售后VX：dsjs8880 轻量版：54 节点全保留，规则精简为 8 条基础分流
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: error
+external-controller: ''
+dns:
+  enable: true
+  ipv6: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-range6: fdfe:dcba:9876::1/64
+  respect-rules: true
+  use-hosts: true
+  listen: 127.0.0.1:7874
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  - 114.114.114.114
+  proxy-server-nameserver:
+  - https://cnn.smilegatecc.com:44443/2b0133bf1c0b4e48/4f5c63f13c3696b816d56f3cbf0e365e3ca766bb8a433651af2028f912ab8f75
+  - https://152.32.186.229:44443/dns-query/4f5c63f13c3696b816d56f3cbf0e365e3ca766bb8a433651af2028f912ab8f75
+  - https://hkd.smilegatecc.com:44443/dns-query/4f5c63f13c3696b816d56f3cbf0e365e3ca766bb8a433651af2028f912ab8f75
+  - https://45.137.180.191:44443/dns-query/4f5c63f13c3696b816d56f3cbf0e365e3ca766bb8a433651af2028f912ab8f75
+  - https://cfd.smilegatecc.com/dns-query/4f5c63f13c3696b816d56f3cbf0e365e3ca766bb8a433651af2028f912ab8f75
+  nameserver:
+  - https://dns.alidns.com/dns-query
+  - https://doh.pub/dns-query
+  - https://223.5.5.5/dns-query
+  - https://223.6.6.6/dns-query
+  - 223.5.5.5
+  - 119.29.29.29
+  fake-ip-filter:
+  - '*.lan'
+  - '*.localdomain'
+  - '*.localhost'
+  - '*.test'
+  - '*.local'
+  - ntp.*
+  - '*.ntp.org'
+  - +.pool.ntp.org
+sniffer:
+  enable: false
+  force-dns-mapping: false
+  parse-pure-ip: false
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - 8080-8880
+      override-destination: true
+    TLS:
+      ports:
+      - 443
+      - 8443
+  skip-domain:
+  - Mijia Cloud
+  - +.apple.com
+  - +.icloud.com
+tcp-concurrent: true
+unified-delay: true
+proxies:
+- name: 香港 01
+  type: trojan
+  server: vd.fireduocc.com
+  port: 12722
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: dynamodb.ap-east-1.amazonaws.com
+  network: tcp
+- name: 香港 02
+  type: trojan
+  server: vd.fireduocc.com
+  port: 12731
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: dynamodb.ap-east-1.amazonaws.com
+  network: tcp
+- name: 香港 03
+  type: trojan
+  server: vd.fireduocc.com
+  port: 16258
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: dynamodb.ap-east-1.amazonaws.com
+  network: tcp
+- name: 香港 04
+  type: trojan
+  server: vd.fireduocc.com
+  port: 31440
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 香港 05
+  type: trojan
+  server: vd.fireduocc.com
+  port: 27896
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 香港 06
+  type: trojan
+  server: vd.fireduocc.com
+  port: 24572
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 香港 07
+  type: trojan
+  server: iepl.fireduocc.com
+  port: 23501
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: i1.hdslb.com
+  network: tcp
+- name: 香港 08
+  type: anytls
+  server: v.fireduocc.com
+  port: 30001
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: dynamodb.ap-northeast-3.amazonaws.com
+  skip-cert-verify: true
+- name: 香港 09
+  type: anytls
+  server: vc.fireduocc.com
+  port: 12741
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: ixigua.com
+  skip-cert-verify: true
+- name: 香港 10
+  type: anytls
+  server: vc.fireduocc.com
+  port: 12742
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: ixigua.com
+  skip-cert-verify: true
+- name: 香港 11
+  type: anytls
+  server: vc.fireduocc.com
+  port: 12743
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: ixigua.com
+  skip-cert-verify: true
+- name: 香港 12
+  type: anytls
+  server: vc.fireduocc.com
+  port: 12744
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: ixigua.com
+  skip-cert-verify: true
+- name: 香港 13
+  type: anytls
+  server: vc.fireduocc.com
+  port: 12745
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: ixigua.com
+  skip-cert-verify: true
+- name: 香港 14
+  type: anytls
+  server: vc.fireduocc.com
+  port: 12746
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: ixigua.com
+  skip-cert-verify: true
+- name: 台湾 01
+  type: trojan
+  server: vss.fireduocc.com
+  port: 32076
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: dynamodb.ap-east-1.amazonaws.com
+  network: tcp
+- name: 台湾 02
+  type: trojan
+  server: vss.fireduocc.com
+  port: 16272
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: dynamodb.ap-east-1.amazonaws.com
+  network: tcp
+- name: 台湾 03
+  type: trojan
+  server: vss.fireduocc.com
+  port: 18250
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 台湾 04
+  type: trojan
+  server: vss.fireduocc.com
+  port: 47203
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 台湾 05
+  type: trojan
+  server: iepl.fireduocc.com
+  port: 23502
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: i1.hdslb.com
+  network: tcp
+- name: 台湾 06
+  type: anytls
+  server: v.fireduocc.com
+  port: 30002
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: dynamodb.ap-northeast-3.amazonaws.com
+  skip-cert-verify: true
+- name: 台湾 07
+  type: anytls
+  server: vc.fireduocc.com
+  port: 24741
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: m.ctrip.com
+  skip-cert-verify: true
+- name: 台湾 08
+  type: anytls
+  server: vc.fireduocc.com
+  port: 24742
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: m.ctrip.com
+  skip-cert-verify: true
+- name: 台湾 09
+  type: anytls
+  server: vc.fireduocc.com
+  port: 24743
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: m.ctrip.com
+  skip-cert-verify: true
+- name: 台湾 10
+  type: anytls
+  server: vc.fireduocc.com
+  port: 24744
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: m.ctrip.com
+  skip-cert-verify: true
+- name: 日本 01
+  type: trojan
+  server: vss.fireduocc.com
+  port: 13493
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 日本 02
+  type: trojan
+  server: vss.fireduocc.com
+  port: 21494
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 日本 03
+  type: trojan
+  server: vss.fireduocc.com
+  port: 32441
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: officecdn.microsoft.com
+  network: tcp
+- name: 日本 04
+  type: trojan
+  server: iepl.fireduocc.com
+  port: 23504
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: i1.hdslb.com
+  network: tcp
+- name: 日本 05
+  type: anytls
+  server: vc.fireduocc.com
+  port: 22741
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: vcdn1.kgimg.cn
+  skip-cert-verify: true
+- name: 日本 06
+  type: anytls
+  server: vc.fireduocc.com
+  port: 22742
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: vcdn1.kgimg.cn
+  skip-cert-verify: true
+- name: 日本 07
+  type: anytls
+  server: vc.fireduocc.com
+  port: 22743
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: vcdn1.kgimg.cn
+  skip-cert-verify: true
+- name: 日本 08
+  type: anytls
+  server: vc.fireduocc.com
+  port: 22744
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: dynamodb.ap-northeast-3.amazonaws.com
+  skip-cert-verify: true
+- name: 新加坡 01
+  type: trojan
+  server: vd.fireduocc.com
+  port: 28424
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 新加坡 02
+  type: trojan
+  server: vd.fireduocc.com
+  port: 23580
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 新加坡 03
+  type: trojan
+  server: iepl.fireduocc.com
+  port: 23503
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: i1.hdslb.com
+  network: tcp
+- name: 新加坡 04
+  type: anytls
+  server: v.fireduocc.com
+  port: 30003
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: dynamodb.ap-northeast-3.amazonaws.com
+  skip-cert-verify: true
+- name: 新加坡 05
+  type: anytls
+  server: vc.fireduocc.com
+  port: 29741
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: v1-dy.ixigua.com
+  skip-cert-verify: true
+- name: 新加坡 06
+  type: anytls
+  server: vc.fireduocc.com
+  port: 29742
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: v1-dy.ixigua.com
+  skip-cert-verify: true
+- name: 新加坡 07
+  type: anytls
+  server: vc.fireduocc.com
+  port: 29743
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: v1-dy.ixigua.com
+  skip-cert-verify: true
+- name: 美国 01
+  type: trojan
+  server: vss.fireduocc.com
+  port: 34826
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 美国 02
+  type: trojan
+  server: vss.fireduocc.com
+  port: 31682
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 美国 03
+  type: trojan
+  server: vss.fireduocc.com
+  port: 31678
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 美国 04
+  type: trojan
+  server: iepl.fireduocc.com
+  port: 23505
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: i1.hdslb.com
+  network: tcp
+- name: 美国 05
+  type: anytls
+  server: vc.fireduocc.com
+  port: 32741
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: v1-dy.ixigua.com
+  skip-cert-verify: true
+- name: 美国 06
+  type: anytls
+  server: vc.fireduocc.com
+  port: 32742
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: v3-dy.ixigua.com
+  skip-cert-verify: true
+- name: 美国 07
+  type: anytls
+  server: vc.fireduocc.com
+  port: 32743
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: v3-dy.ixigua.com
+  skip-cert-verify: true
+- name: 韩国 01
+  type: trojan
+  server: vss.fireduocc.com
+  port: 15345
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 韩国 02
+  type: anytls
+  server: vc.fireduocc.com
+  port: 36742
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: v3-dy.ixigua.com
+  skip-cert-verify: true
+- name: 阿根廷 01
+  type: trojan
+  server: vss.fireduocc.com
+  port: 33578
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 阿根廷 02
+  type: anytls
+  server: vc.fireduocc.com
+  port: 36744
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: v3-dy.ixigua.com
+  skip-cert-verify: true
+- name: 加拿大 01
+  type: anytls
+  server: vc.fireduocc.com
+  port: 36741
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: dynamodb.ap-northeast-3.amazonaws.com
+  skip-cert-verify: true
+- name: 英国 01
+  type: anytls
+  server: vc.fireduocc.com
+  port: 36745
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: v3-dy.ixigua.com
+  skip-cert-verify: true
+- name: 德国 01
+  type: anytls
+  server: vc.fireduocc.com
+  port: 36746
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: v3-dy.ixigua.com
+  skip-cert-verify: true
+- name: 土耳其 01
+  type: anytls
+  server: vc.fireduocc.com
+  port: 36747
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  client-fingerprint: chrome
+  alpn:
+  - h2
+  sni: v3-dy.ixigua.com
+  skip-cert-verify: true
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - 香港 01
+  - 香港 02
+  - 香港 03
+  - 香港 04
+  - 香港 05
+  - 香港 06
+  - 香港 07
+  - 香港 08
+  - 香港 09
+  - 香港 10
+  - 香港 11
+  - 香港 12
+  - 香港 13
+  - 香港 14
+  - 台湾 01
+  - 台湾 02
+  - 台湾 03
+  - 台湾 04
+  - 台湾 05
+  - 台湾 06
+  - 台湾 07
+  - 台湾 08
+  - 台湾 09
+  - 台湾 10
+  - 日本 01
+  - 日本 02
+  - 日本 03
+  - 日本 04
+  - 日本 05
+  - 日本 06
+  - 日本 07
+  - 日本 08
+  - 新加坡 01
+  - 新加坡 02
+  - 新加坡 03
+  - 新加坡 04
+  - 新加坡 05
+  - 新加坡 06
+  - 新加坡 07
+  - 美国 01
+  - 美国 02
+  - 美国 03
+  - 美国 04
+  - 美国 05
+  - 美国 06
+  - 美国 07
+  - 韩国 01
+  - 韩国 02
+  - 阿根廷 01
+  - 阿根廷 02
+  - 加拿大 01
+  - 英国 01
+  - 德国 01
+  - 土耳其 01
+  - DIRECT
+rules:
+- DOMAIN-SUFFIX,local,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+- GEOIP,CN,DIRECT
+- MATCH,🚀 节点选择
