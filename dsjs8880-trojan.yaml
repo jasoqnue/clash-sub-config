@@ -1,0 +1,271 @@
+# dsjs8880 兼容版：仅保留 25 条 trojan 节点（剔除 anytls），1 组 9 规则
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: error
+proxies:
+- name: 香港 01
+  type: trojan
+  server: vd.fireduocc.com
+  port: 12722
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: dynamodb.ap-east-1.amazonaws.com
+  network: tcp
+- name: 香港 02
+  type: trojan
+  server: vd.fireduocc.com
+  port: 12731
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: dynamodb.ap-east-1.amazonaws.com
+  network: tcp
+- name: 香港 03
+  type: trojan
+  server: vd.fireduocc.com
+  port: 16258
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: dynamodb.ap-east-1.amazonaws.com
+  network: tcp
+- name: 香港 04
+  type: trojan
+  server: vd.fireduocc.com
+  port: 31440
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 香港 05
+  type: trojan
+  server: vd.fireduocc.com
+  port: 27896
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 香港 06
+  type: trojan
+  server: vd.fireduocc.com
+  port: 24572
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 香港 07
+  type: trojan
+  server: iepl.fireduocc.com
+  port: 23501
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: i1.hdslb.com
+  network: tcp
+- name: 台湾 01
+  type: trojan
+  server: vss.fireduocc.com
+  port: 32076
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: dynamodb.ap-east-1.amazonaws.com
+  network: tcp
+- name: 台湾 02
+  type: trojan
+  server: vss.fireduocc.com
+  port: 16272
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: dynamodb.ap-east-1.amazonaws.com
+  network: tcp
+- name: 台湾 03
+  type: trojan
+  server: vss.fireduocc.com
+  port: 18250
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 台湾 04
+  type: trojan
+  server: vss.fireduocc.com
+  port: 47203
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 台湾 05
+  type: trojan
+  server: iepl.fireduocc.com
+  port: 23502
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: i1.hdslb.com
+  network: tcp
+- name: 日本 01
+  type: trojan
+  server: vss.fireduocc.com
+  port: 13493
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 日本 02
+  type: trojan
+  server: vss.fireduocc.com
+  port: 21494
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 日本 03
+  type: trojan
+  server: vss.fireduocc.com
+  port: 32441
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: officecdn.microsoft.com
+  network: tcp
+- name: 日本 04
+  type: trojan
+  server: iepl.fireduocc.com
+  port: 23504
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: i1.hdslb.com
+  network: tcp
+- name: 新加坡 01
+  type: trojan
+  server: vd.fireduocc.com
+  port: 28424
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 新加坡 02
+  type: trojan
+  server: vd.fireduocc.com
+  port: 23580
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 新加坡 03
+  type: trojan
+  server: iepl.fireduocc.com
+  port: 23503
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: i1.hdslb.com
+  network: tcp
+- name: 美国 01
+  type: trojan
+  server: vss.fireduocc.com
+  port: 34826
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 美国 02
+  type: trojan
+  server: vss.fireduocc.com
+  port: 31682
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 美国 03
+  type: trojan
+  server: vss.fireduocc.com
+  port: 31678
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 美国 04
+  type: trojan
+  server: iepl.fireduocc.com
+  port: 23505
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: i1.hdslb.com
+  network: tcp
+- name: 韩国 01
+  type: trojan
+  server: vss.fireduocc.com
+  port: 15345
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+- name: 阿根廷 01
+  type: trojan
+  server: vss.fireduocc.com
+  port: 33578
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: v1-dy.ixigua.com
+  network: tcp
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - 香港 01
+  - 香港 02
+  - 香港 03
+  - 香港 04
+  - 香港 05
+  - 香港 06
+  - 香港 07
+  - 台湾 01
+  - 台湾 02
+  - 台湾 03
+  - 台湾 04
+  - 台湾 05
+  - 日本 01
+  - 日本 02
+  - 日本 03
+  - 日本 04
+  - 新加坡 01
+  - 新加坡 02
+  - 新加坡 03
+  - 美国 01
+  - 美国 02
+  - 美国 03
+  - 美国 04
+  - 韩国 01
+  - 阿根廷 01
+  - DIRECT
+rules:
+- DOMAIN-SUFFIX,local,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- GEOIP,CN,DIRECT
+- MATCH,🚀 节点选择
