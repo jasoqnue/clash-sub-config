@@ -1,0 +1,22 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: error
+proxies:
+- name: 香港 01
+  type: trojan
+  server: vd.fireduocc.com
+  port: 12722
+  password: afcdd90e-72a2-439e-b449-1c6b0267690d
+  udp: true
+  skip-cert-verify: true
+  sni: dynamodb.ap-east-1.amazonaws.com
+  network: tcp
+proxy-groups:
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - 香港 01
+  - DIRECT
+rules:
+- MATCH,🚀 节点选择
